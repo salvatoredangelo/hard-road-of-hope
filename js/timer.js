@@ -1,5 +1,5 @@
 //timer logic
-const deadline = new Date("may 29, 2020 20:00:00").getTime()
+const deadline = new Date("may 29, 2020 06:00:00").getTime()
 const now = new Date().getTime()
 const timer = deadline - now
 
