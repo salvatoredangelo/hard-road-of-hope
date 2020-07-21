@@ -10,8 +10,10 @@ const minutes = Math.floor((timer % (1000 * 60 * 60)) / (1000 * 60));
 
 //grab element
 const timerNode = document.querySelector('#timer')
-if (days >= 1) {
+if (days > 1) {
     timerNode.innerHTML = `Coming in ${days} days`
+} else if (days === 1) {
+    timerNode.innerHTML = `Coming in ${24 + hours} hours`
 } else if (days < 1) {
     timerNode.innerHTML = `Countdown to Premiere: ${hours}:${minutes}`
 } else if (timer <= 0) {

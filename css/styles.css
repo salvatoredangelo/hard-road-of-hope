@@ -8,7 +8,7 @@
 
 :root {
     --nav-color: rgba(20, 20, 1, 1);
-    --nav-color-secondary: rgba(0,0,0,0);
+    --nav-color-secondary: rgba(0, 0, 0, 0);
     --nav-height: 2rem;
     --main-font-col: rgb(236, 231, 206);
     --emphasized-text: #EAA221;
@@ -120,7 +120,7 @@ nav {
 
 .nav-link {
     width: 100px;
-    font-size: 1rem;
+    font-size: 0.7rem;
 }
 
 .nav-link:hover {
@@ -143,19 +143,27 @@ nav {
 .container {
     width: 100vw;
     height: auto;
-    max-width: 720px;
+    max-width: 800px;
     min-height: calc(100vh - (2 * var(--nav-height)));
     background-color: rgba(00, 00, 00, 0.7);
     padding: 0 1rem;
     margin: auto;
     margin-top: calc(var(--nav-height));
-    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     box-shadow: 6px 0 15px var(--bshadow-color),
         -6px 0 15px var(--bshadow-color);
+}
+
+@media (min-width: 800px) {
+    .container {
+        border-radius: 5px;
+    }
+    .nav-link {
+        font-size: 0.9rem;
+    }
 }
 
 .over-hid {
@@ -182,7 +190,8 @@ nav {
     margin-bottom: 1rem;
 }
 
-#synopsis p {
+#synopsis p,
+#about-the-filmmaker p {
     line-height: 1.5rem;
 }
 
@@ -208,7 +217,8 @@ nav {
     color: var(--emphasized-text);
 }
 
-#cast li, #crew li {
+#cast li,
+#crew li {
     line-height: 1.2rem;
 }
 
@@ -264,6 +274,34 @@ nav {
 #title {
     font-size: 2.5rem;
     margin-top: 1rem;
+}
+
+.awards {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    width: 100%;
+    height: 2.5rem;
+    filter: invert();
+    opacity: 0.7;
+    margin: -0.5rem 0 1rem 0;
+}
+
+.award {
+    display: inline-block;
+    width: 3rem;
+    max-height: 100%;
+    margin: 0 0.5rem;
+}
+
+@media(min-width: 800px) {
+    .awards {
+        height: 4rem;
+    }
+
+    .award {
+        width: 5rem;
+    }
 }
 
 #gumroad-cta {
@@ -366,6 +404,71 @@ nav {
     transition: all 0.1s ease-in;
 }
 
+/* PRESSPRESSPRESSPRESSPRESSPRESSPRESSPRESSPRESSPRESSPRESSPRESSPRESSPRESSPRESSPRESSPRESS */
+
+.press-container>div {
+    padding: 1rem 0;
+    font-size: 0.8rem;
+}
+
+.praise>.card {
+    /* border: 1px solid white; */
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+}
+
+.praise h2 {
+    margin-bottom: 0;
+}
+
+.card p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.card p:nth-of-type(2) {
+    opacity: 0.69;
+    margin-top: 0.25rem;
+}
+
+.card p span {
+    font-size: 1rem;
+    color: var(--emphasized-text);
+}
+
+.press ul>li {
+    border: 1px solid white;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.press ul>li:hover {
+    border: 1px solid var(--emphasized-text);
+    color: var(--emphasized-text);
+}
+
+.press ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 800px) {
+    .press-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: flex-start;
+    }
+    .praise {
+        margin-right: 1rem;
+    }
+    .praise h2 {
+        margin-bottom: 1rem;
+    }
+    .press h2 {
+        margin-bottom: 1.5rem;
+    }
+}
+
 /* FOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTERFOOTER */
 
 .bottom-shadow {
@@ -381,11 +484,22 @@ footer {
     justify-content: center;
     align-items: center;
     height: var(--nav-height);
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
 }
 
 footer span {
-    color: var(--emphasized-text);
+    color: silver;
     font-size: 0.75rem;
+    opacity: 0.8;
+}
+
+footer span a {
+    color: var(--emphasized-text);
+    opacity: 0.5
+}
+
+footer span a:hover {
+    opacity: 1;
 }
 
 /* MISC */

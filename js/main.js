@@ -3,8 +3,6 @@ const navColor = getComputedStyle(document.documentElement)
 const navColor2 = getComputedStyle(document.documentElement)
     .getPropertyValue('--nav-color-secondary')
 
-console.log(navColor2)
-
 window.onscroll = () => scrollFunction()
 
 function scrollFunction() {
